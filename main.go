@@ -3,16 +3,12 @@ package main
 import (
 	"fmt"
 
-	"golang.concurrency/weather"
+	"golang.concurrency/fibonacci"
 )
 
 func main() {
-	locations := []string{"London", "Liverpool"}
-	ch := weather.FetchWeatherForLocactions(locations)
-
-	for i := 0; i < len(locations); i++ {
-		fmt.Println(<-ch)
+	for num := range fibonacci.GenerateFibonnaciSequence(20) {
+		fmt.Println(num)
 	}
-
 	fmt.Println("Done!")
 }

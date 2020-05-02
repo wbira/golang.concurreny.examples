@@ -6,6 +6,16 @@ type Location struct {
 	Id int `json:"woeid,omitempty"`
 }
 
+type FetchLocationResult struct {
+	Location *Location
+	Error    error
+}
+
+type FetchWeatherResult struct {
+	Weather *Weather
+	Error   error
+}
+
 type ConsolidatedWeather struct {
 	ID                   string `json:"id"`
 	WeatherStateName     string `json:"weather_state_name"`
